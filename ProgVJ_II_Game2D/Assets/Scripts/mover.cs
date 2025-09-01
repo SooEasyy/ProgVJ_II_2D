@@ -29,6 +29,6 @@ public class Mover : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        miRigidbody2D.MovePosition(miRigidbody2D.position + direccion * (velocidad * Time.fixedDeltaTime));
+        miRigidbody2D.AddForce(direccion * velocidad);
     }
 }
