@@ -7,15 +7,14 @@ public class Jugador : MonoBehaviour
 {
     [Header("Configuracion de Atributos")]
     [SerializeField]
-    [Range(0, 50)]
-    private int vida = 50;
+    [Range(0, 10)]
+    private int vida = 5;
     public int Vida { get => vida; set => vida = value; }
 
     [SerializeField]
     private UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
 
-    [SerializeField]
-    private UnityEvent<string> OnTextChanged;
+    [SerializeField] private GameManager gameManager;
 
     private void Start()
     {
@@ -25,9 +24,12 @@ public class Jugador : MonoBehaviour
     public void ModificarVida(int puntos)
     {
         Vida += puntos;
-        OnTextChanged.Invoke(Vida.ToString());
         OnLivesChanged.Invoke(Vida);
-        Debug.Log(EstasVivo());
+
+        if (!EstasVivo())
+        {
+            GameManager.Instance.CheckLose(vida);
+        }
     }
 
     private bool EstasVivo()
@@ -37,8 +39,9 @@ public class Jugador : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Meta")) { return; }
-
-        Debug.Log("GANASTE");
+        if (collision.gameObject.CompareTag("Meta"))
+        {
+            GameManager.Instance.Win();
+        }
     }
 }
