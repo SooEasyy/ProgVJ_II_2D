@@ -3,17 +3,54 @@ using UnityEngine;
 
 public class HUDController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI miTexto;
+    [SerializeField] GameObject iconoVida;
+    [SerializeField] GameObject contenedorIconosVida;
 
-    public void ActualizarTextoHUD(int vidas)
+    public void ActualizarVidasHUD (int vidas)
     {
-        if (miTexto == null)
+        Debug.Log("ESTAS ACTUALIZANDO VIDAS");
+        if (EstaVacioContenedor())
         {
-            Debug.LogError("HUDController: miTexto no está asignado en el inspector!");
+            CargarContenedor(vidas);
             return;
         }
 
-        Debug.Log("Actualizando HUD con vidas = " + vidas);
-        miTexto.text = vidas.ToString();
+        if (CantidadIconosVida()>vidas)
+        {
+            EliminarUltimoIcono();
+        }
+        else
+        {
+            CrearIcono();
+        }
+    }
+
+    private bool EstaVacioContenedor()
+    {
+        return contenedorIconosVida.transform.childCount == 0;
+    }
+
+    private int CantidadIconosVida()
+    {
+        return contenedorIconosVida.transform.childCount;
+    }
+
+    private void EliminarUltimoIcono()
+    {
+        Transform contenedor = contenedorIconosVida.transform;
+        GameObject.Destroy(contenedor.GetChild(contenedor.childCount - 1).gameObject);
+    }
+
+    private void CargarContenedor (int cantidadIconos)
+    {
+        for (int i = 0; i < cantidadIconos; i++)
+        {
+            CrearIcono();
+        }
+    }
+
+    private void CrearIcono()
+    {
+        Instantiate(iconoVida, contenedorIconosVida.transform);
     }
 }
