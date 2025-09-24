@@ -14,4 +14,9 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Portada");
     }
+    public void IrAlSiguienteNivel()
+    {
+        int siguienteNivel = ProgressManager.Instance.Progreso.ObtenerSiguienteNivel();
+        SceneManager.LoadScene("Nivel " + siguienteNivel);
+    }
 }

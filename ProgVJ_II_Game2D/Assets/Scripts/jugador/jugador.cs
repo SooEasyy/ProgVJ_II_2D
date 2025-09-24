@@ -5,25 +5,23 @@ using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
-    [Header("Configuracion de Atributos")]
     [SerializeField]
-    [Range(0, 10)]
+    private UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
     private int vida = 5;
     public int Vida { get => vida; set => vida = value; }
 
-    [SerializeField]
-    private UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
-
-    [SerializeField] private GameManager gameManager;
-
     private void Start()
     {
+        // ?? Recupero las vidas guardadas
+        vida = ProgressManager.Instance.Progreso.vidas;
         OnLivesChanged.Invoke(Vida);
     }
 
     public void ModificarVida(int puntos)
     {
         Vida += puntos;
+        ProgressManager.Instance.Progreso.vidas = Vida; // ?? Actualizo las vidas en el progreso
+
         OnLivesChanged.Invoke(Vida);
 
         if (!EstasVivo())
@@ -34,14 +32,34 @@ public class Jugador : MonoBehaviour
 
     private bool EstasVivo()
     {
-        return vida > 0;
+        return ProgressManager.Instance.Progreso.GetVidas() > 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Meta"))
+        switch (collision.gameObject.tag)
         {
-            GameManager.Instance.Win();
+            case "Meta":
+                ProgressManager.Instance.Progreso.SubirNivel();
+                GameManager.Instance.Win();
+                break;
+
+            case "Estrella":
+                ProgressManager.Instance.Progreso.AgregarEstrella();
+                Destroy(collision.gameObject);
+                break;
+
+            case "Cañon":
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.AddForce(Vector2.up * 500f);
+                }
+                break;
+
+            default:
+                // objetos sin etiqueta específica -> no hacen nada
+                break;
         }
     }
 }

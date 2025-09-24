@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Meta
   - Suelo
+  - "Ca\xF1on"
   layers:
   - Default
   - TransparentFX
