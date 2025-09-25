@@ -1080,6 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435cc97eb335af9478e39bfa7a49cb87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progresoData: {fileID: 0}
 --- !u!4 &371611196
 Transform:
   m_ObjectHideFlags: 0
@@ -2338,6 +2339,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &904426170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904426172}
+  - component: {fileID: 904426171}
+  m_Layer: 0
+  m_Name: ProgressManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &904426171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904426170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435cc97eb335af9478e39bfa7a49cb87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progresoData: {fileID: 11400000, guid: 58c6c8fec35b57a4fbcd01ca8a680f45, type: 2}
+--- !u!4 &904426172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904426170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.7992806, y: 5.775968, z: 1.423176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &910345756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5144,3 +5190,4 @@ SceneRoots:
   - {fileID: 1664459509}
   - {fileID: 371611196}
   - {fileID: 1014412754}
+  - {fileID: 904426172}

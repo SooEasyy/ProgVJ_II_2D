@@ -7,45 +7,42 @@ public class Jugador : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
-    private int vida = 5;
-    public int Vida { get => vida; set => vida = value; }
+    private ProgresoData progreso;
 
     private void Start()
     {
-        // ?? Recupero las vidas guardadas
-        vida = ProgressManager.Instance.Progreso.vidas;
-        OnLivesChanged.Invoke(Vida);
+        progreso = ProgressManager.Instance.progresoData;
+        OnLivesChanged.Invoke(progreso.vidas);
     }
 
     public void ModificarVida(int puntos)
     {
-        Vida += puntos;
-        ProgressManager.Instance.Progreso.vidas = Vida; // ?? Actualizo las vidas en el progreso
-
-        OnLivesChanged.Invoke(Vida);
+        progreso.vidas += puntos;
+        OnLivesChanged.Invoke(progreso.vidas);
 
         if (!EstasVivo())
         {
-            GameManager.Instance.CheckLose(vida);
+            GameManager.Instance.CheckLose(progreso.vidas);
         }
     }
 
     private bool EstasVivo()
     {
-        return ProgressManager.Instance.Progreso.GetVidas() > 0;
+        return progreso.vidas > 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        var progreso = ProgressManager.Instance.progresoData;
+
         switch (collision.gameObject.tag)
         {
             case "Meta":
-                ProgressManager.Instance.Progreso.SubirNivel();
                 GameManager.Instance.Win();
                 break;
 
             case "Estrella":
-                ProgressManager.Instance.Progreso.AgregarEstrella();
+                progreso.estrellas++;
                 Destroy(collision.gameObject);
                 break;
 
@@ -62,4 +59,5 @@ public class Jugador : MonoBehaviour
                 break;
         }
     }
+
 }

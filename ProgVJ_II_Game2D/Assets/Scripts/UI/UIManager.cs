@@ -16,7 +16,8 @@ public class UIManager : MonoBehaviour
     }
     public void IrAlSiguienteNivel()
     {
-        int siguienteNivel = ProgressManager.Instance.Progreso.ObtenerSiguienteNivel();
+        int siguienteNivel = ProgressManager.Instance.progresoData.ObtenerSiguienteNivel();
         SceneManager.LoadScene("Nivel " + siguienteNivel);
     }
+
 }
