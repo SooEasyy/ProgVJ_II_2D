@@ -20,4 +20,9 @@ public class ProgresoData : ScriptableObject
         return nivelActual;
     }
 
+    public void AgregarEstrella()
+    {
+        estrellas++;
+    }
+
 }
