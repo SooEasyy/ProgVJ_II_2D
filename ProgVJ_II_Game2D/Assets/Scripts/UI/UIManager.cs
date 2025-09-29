@@ -1,23 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public void Reintentar()
     {
-        Scene actual = SceneManager.GetActiveScene();
-        // si perdiste o ganaste, volvemos al primer nivel (ej: "Nivel1")
-        SceneManager.LoadScene("Nivel 1");
+        // ? Ahora usamos GameManager
+        GameManager.Instance.Reintentar();
     }
 
     public void IrAlMenu()
     {
-        SceneManager.LoadScene("Portada");
+        // ? Usamos GameManager
+        GameManager.Instance.VolverAlMenu();
     }
+
     public void IrAlSiguienteNivel()
     {
         int siguienteNivel = ProgressManager.Instance.progresoData.ObtenerSiguienteNivel();
-        SceneManager.LoadScene("Nivel " + siguienteNivel);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Nivel " + siguienteNivel);
+    }
+
+    public void NuevoJuego()
+    {
+        // ? Para el botón Jugar en la portada
+        GameManager.Instance.NuevoJuego();
     }
 
     public void SalirJuego()
@@ -27,5 +33,9 @@ public class UIManager : MonoBehaviour
         // Funciona en build
         Application.Quit();
 
+#if UNITY_EDITOR
+        // Solo para que funcione dentro del editor
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

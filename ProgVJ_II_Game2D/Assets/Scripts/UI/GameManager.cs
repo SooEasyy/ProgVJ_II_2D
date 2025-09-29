@@ -18,6 +18,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void NuevoJuego()
+    {
+        ProgressManager.Instance.progresoData.ResetearProgreso();
+
+        SceneManager.LoadScene("Nivel 1");
+    }
+
+    public void Reintentar()
+    {
+        ProgressManager.Instance.progresoData.vidas = ProgressManager.Instance.progresoData.vidasIniciales;
+
+        int nivelActual = ProgressManager.Instance.progresoData.nivelActual;
+
+        string nombreEscena = "Nivel " + nivelActual;
+
+        SceneManager.LoadScene(nombreEscena);
+    }
+    public void VolverAlMenu()
+    {
+        SceneManager.LoadScene("Portada");
+    }
     public void Win()
     {
         Debug.Log("Ganaste!");

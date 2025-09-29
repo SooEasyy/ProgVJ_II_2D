@@ -9,12 +9,13 @@ public class ProgresoData : ScriptableObject
     public int vidas;
     public int estrellas = 0;
 
-    private void OnEnable()
+    public void ResetearProgreso()
     {
-        // Cada vez que se usa, inicializamos las vidas
+        nivelActual = 1;
         vidas = vidasIniciales;
+        estrellas = 0;
     }
-        public int ObtenerSiguienteNivel()
+    public int ObtenerSiguienteNivel()
     {
         nivelActual++;
         return nivelActual;
