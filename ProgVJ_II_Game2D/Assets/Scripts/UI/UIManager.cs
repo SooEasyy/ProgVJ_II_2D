@@ -20,4 +20,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Nivel " + siguienteNivel);
     }
 
+    public void SalirJuego()
+    {
+        Debug.Log("Cerrando el juego...");
+
+        // Funciona en build
+        Application.Quit();
+
+    }
 }

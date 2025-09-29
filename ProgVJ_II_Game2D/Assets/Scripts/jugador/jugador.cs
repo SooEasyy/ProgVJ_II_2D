@@ -42,7 +42,8 @@ public class Jugador : MonoBehaviour
                 break;
 
             case "Estrella":
-                progreso.estrellas++;
+                ProgressManager.Instance.progresoData.AgregarEstrella();
+                UIStars.Instance.ActualizarEstrellas(ProgressManager.Instance.progresoData.estrellas);
                 Destroy(collision.gameObject);
                 break;
 

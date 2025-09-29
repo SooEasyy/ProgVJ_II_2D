@@ -5,7 +5,7 @@ public class UIStars : MonoBehaviour
 {
     public static UIStars Instance { get; private set; }
 
-    [SerializeField] private TMP_Text textoCantidad; // ?? ahora usa TMP_Text
+    [SerializeField] private TMP_Text textoCantidad;
 
     private void Awake()
     {
