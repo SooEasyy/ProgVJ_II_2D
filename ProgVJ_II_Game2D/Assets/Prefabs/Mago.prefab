@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
       propertyPath: m_Name
-      value: Enemigo (3) Variant
+      value: Mago
       objectReference: {fileID: 0}
     - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,29 +67,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -1514863966722182249}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
---- !u!1 &4155596309547501905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
-  m_PrefabInstance: {fileID: 1402487308717401922}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &-1514863966722182249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4155596309547501905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d75fc1b3f6141d4783f23aedd05ec82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proyectilPrefab: {fileID: 3028341046981885797, guid: d31847a678362b54d95a3bd1d68776de, type: 3}
-  tiempoInicial: 1
-  intervaloDisparo: 2
-  fuerzaDisparo: 5

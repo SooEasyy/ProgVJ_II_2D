@@ -2,25 +2,45 @@ using UnityEngine;
 
 public class Proyectil : MonoBehaviour
 {
-    [SerializeField] private int daño = -1;
+    [SerializeField] private float velocidad = 5f;
     [SerializeField] private float tiempoVida = 3f;
 
-    private void Start()
+    // Variables a configurar desde el editor
+    [Header("Configuracion")]
+    [SerializeField] int puntos = 5;
+
+
+    private Vector2 direccion = Vector2.right; // ?? dirección por defecto
+
+    private void OnEnable()
     {
-        Destroy(gameObject, tiempoVida);
+        Invoke(nameof(Desactivar), tiempoVida);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
-        {
-            Jugador jugador = collision.GetComponent<Jugador>();
-            if (jugador != null)
-            {
-                jugador.ModificarVida(daño);
-            }
+        transform.Translate(direccion * velocidad * Time.deltaTime);
+    }
 
-            Destroy(gameObject);
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Jugador jugador = collision.gameObject.GetComponent<Jugador>();
+            jugador.ModificarVida(-puntos);
+            Debug.Log(" PUNTOS DE DAÑO REALIZADOS AL JUGADOR " + puntos);
         }
+        Desactivar();
+    }
+
+    private void Desactivar()
+    {
+        CancelInvoke();
+        gameObject.SetActive(false);
+    }
+
+    public void SetDireccion(Vector2 nuevaDireccion)
+    {
+        direccion = nuevaDireccion;
     }
 }
