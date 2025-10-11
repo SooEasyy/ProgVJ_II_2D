@@ -22,15 +22,18 @@ public class Proyectil : MonoBehaviour
         transform.Translate(direccion * velocidad * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Jugador jugador = collision.gameObject.GetComponent<Jugador>();
-            jugador.ModificarVida(-puntos);
-            Debug.Log(" PUNTOS DE DAÑO REALIZADOS AL JUGADOR " + puntos);
+            var jugador = collision.GetComponent<Jugador>();
+            if (jugador != null)
+            {
+                jugador.ModificarVida(-1);
+            }
+
+            Desactivar();
         }
-        Desactivar();
     }
 
     private void Desactivar()
