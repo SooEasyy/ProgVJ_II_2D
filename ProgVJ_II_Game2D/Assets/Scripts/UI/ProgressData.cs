@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ProgresoData", menuName = "Juego/ProgresoData")]
@@ -9,6 +10,7 @@ public class ProgresoData : ScriptableObject
     public int vidas;
     public int estrellas = 0;
 
+    public List<string> estrellasRecolectadas = new List<string>();
     public void ResetearProgreso()
     {
         nivelActual = 1;
@@ -21,9 +23,23 @@ public class ProgresoData : ScriptableObject
         return nivelActual;
     }
 
-    public void AgregarEstrella()
+    public void AgregarEstrella(string idEstrella)
     {
-        estrellas++;
+        if (!estrellasRecolectadas.Contains(idEstrella))
+        {
+            estrellas++;
+            estrellasRecolectadas.Add(idEstrella);
+        }
+    }
+
+    public bool FueRecolectada(string idEstrella)
+    {
+        return estrellasRecolectadas.Contains(idEstrella);
+    }
+
+    public void ReiniciarEstrellas()
+    {
+        estrellasRecolectadas.Clear();
     }
 
 }

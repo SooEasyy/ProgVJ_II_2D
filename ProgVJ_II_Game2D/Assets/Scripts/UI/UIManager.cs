@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     {
         // ? Para el botón Jugar en la portada
         GameManager.Instance.NuevoJuego();
+        ProgressManager.Instance.progresoData.estrellasRecolectadas.Clear();
+        ProgressManager.Instance.progresoData.estrellas = 0;
     }
 
     public void SalirJuego()

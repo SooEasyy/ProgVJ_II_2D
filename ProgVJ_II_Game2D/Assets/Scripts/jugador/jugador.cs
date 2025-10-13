@@ -41,12 +41,6 @@ public class Jugador : MonoBehaviour
                 GameManager.Instance.Win();
                 break;
 
-            case "Estrella":
-                ProgressManager.Instance.progresoData.AgregarEstrella();
-                UIStars.Instance.ActualizarEstrellas(ProgressManager.Instance.progresoData.estrellas);
-                Destroy(collision.gameObject);
-                break;
-
             case "Cañon":
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 if (rb != null)
