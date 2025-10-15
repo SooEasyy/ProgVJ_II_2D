@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7227974246934189454
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_Name
+      value: Ciclope Mov
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329599745163173199, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651873474976383809, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809476101788751562, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1441679705, guid: 234d1b8daad36a046bc4aa7b70ec939c, type: 3}
+    - target: {fileID: 8984603047397724667, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      propertyPath: puntos
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7610494368615402124}
+  m_SourcePrefab: {fileID: 100100000, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+--- !u!1 &5662126843578809245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3088631607961644563, guid: e4c63c1fcec6dd242a7c8451744826b9, type: 3}
+  m_PrefabInstance: {fileID: 7227974246934189454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7610494368615402124
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662126843578809245}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5391307c80bded14d962b47fa5701565, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

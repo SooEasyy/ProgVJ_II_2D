@@ -77,6 +77,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4833413504304175886}
+  - {fileID: 5372012607143539855}
   m_Father: {fileID: 2358668556277151445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &3996879028828787720
@@ -2822,6 +2823,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9157638720673640840, guid: 595f556b136979e429aebbfa73743b8d, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157638720673640840, guid: 595f556b136979e429aebbfa73743b8d, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2832,7 +2841,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5703405855598683139, guid: 595f556b136979e429aebbfa73743b8d, type: 3}
   m_PrefabInstance: {fileID: 879656105024159501}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6450426572602800778
+--- !u!1001 &8256196424351703616
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6552179144998140521}
+    m_Modifications:
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662126843578809245, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_Name
+      value: Ciclope Mov
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662126843578809245, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+--- !u!4 &5372012607143539855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4043915696858502863, guid: e2a83b0d331013f4dac296dedb884f41, type: 3}
+  m_PrefabInstance: {fileID: 8256196424351703616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &878217368967451961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
