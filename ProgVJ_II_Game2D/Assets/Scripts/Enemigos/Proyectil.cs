@@ -9,8 +9,21 @@ public class Proyectil : MonoBehaviour
     [Header("Configuracion")]
     [SerializeField] int puntos = 5;
 
+    [Header("Sonido de impacto")]
+    [SerializeField] private AudioClip collisionSFX;
+    private AudioSource audioSource;
 
     private Vector2 direccion = Vector2.right; // ?? dirección por defecto
+        private void Awake()
+    {
+        // Añadimos o usamos un AudioSource existente
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+    }
 
     private void OnEnable()
     {
@@ -30,6 +43,11 @@ public class Proyectil : MonoBehaviour
             if (jugador != null)
             {
                 jugador.ModificarVida(-1);
+
+                if (collisionSFX != null)
+                {
+                    AudioSource.PlayClipAtPoint(collisionSFX, transform.position);
+                }
             }
 
             Desactivar();

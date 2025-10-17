@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
+    [Header("Sonidos del jugador")]
+    [SerializeField] private AudioClip sonidoCañon;
+
     [SerializeField]
     private UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
     private ProgresoData progreso;
@@ -47,6 +50,9 @@ public class Jugador : MonoBehaviour
                 {
                     rb.AddForce(Vector2.up * 500f);
                 }
+
+                if (sonidoCañon != null)
+                    AudioSource.PlayClipAtPoint(sonidoCañon, transform.position);
                 break;
 
             default:

@@ -4,6 +4,9 @@ public class Estrella : MonoBehaviour
 {
     [SerializeField] private string idEstrella = "";
 
+    [Header("Sonido de recolección")]
+    [SerializeField] private AudioClip collectSFX;
+
     private ProgresoData progreso;
     private void Start()
     {
@@ -21,7 +24,12 @@ public class Estrella : MonoBehaviour
             ProgressManager.Instance.progresoData.AgregarEstrella(idEstrella);
             UIStars.Instance.ActualizarEstrellas(ProgressManager.Instance.progresoData.estrellas);
 
-            gameObject.SetActive(false); // ?? No la destruimos, solo la desactivamos
+            if (collectSFX != null)
+            {
+                AudioSource.PlayClipAtPoint(collectSFX, transform.position);
+            }
+
+            gameObject.SetActive(false); 
         }
     }
 }

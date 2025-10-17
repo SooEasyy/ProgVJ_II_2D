@@ -2,28 +2,34 @@ using UnityEngine;
 
 public class Saltar : MonoBehaviour
 {
-    public float FuerzaSalto = 12f;
+    [SerializeField] private float fuerzaSalto = 12f;
+    [SerializeField] private AudioClip jumpSFX;
+
     private Rigidbody2D miRigidbody2D;
+    private AudioSource miAudioSource;
     private bool puedeSaltar = false;
 
     void Start()
     {
         miRigidbody2D = GetComponent<Rigidbody2D>();
+        miAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && puedeSaltar)
         {
-            miRigidbody2D.AddForce(Vector2.up * FuerzaSalto, ForceMode2D.Impulse);
+            miRigidbody2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
             puedeSaltar = false;
+
+            if (jumpSFX != null)
+                miAudioSource.PlayOneShot(jumpSFX);
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        // Solo permite saltar si tocamos algo con etiqueta "Suelo"
-        if (col.gameObject.CompareTag("Untagged"))
+        if (col.gameObject.CompareTag("Suelo"))
         {
             puedeSaltar = true;
         }
