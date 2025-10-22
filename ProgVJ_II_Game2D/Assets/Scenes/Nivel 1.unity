@@ -8990,7 +8990,7 @@ GameObject:
   - component: {fileID: 363155063}
   - component: {fileID: 363155062}
   m_Layer: 0
-  m_Name: GeneradorNivel
+  m_Name: GeneradorNoche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
